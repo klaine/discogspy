@@ -34,7 +34,7 @@ Release = {'release_id':None,\
 # Luetaan XML-tiedostosta elementti kerrallaan
 for action, elem in context:
 
- # Kun kohdalla 'release' elementin loppu (action == 'end') ja release on hyvaksytty, kasitellaan sen tiedot
+ # Kun kohdalla 'release' elementin loppu (action == 'end') ja release on hyväksytty, käsitellaan sen tiedot
  if elem.tag == 'release' and action == 'end' and len(elem.getchildren()) > 5 and elem.values()[1] == 'Accepted':
 
    store = Release.copy()
@@ -69,7 +69,7 @@ for action, elem in context:
    root.clear()
    releases.insert(store)
 
-   # Tulostetaan 500 kpl valein tallennettu maara konsoliin
+   # Tulostetaan 500 kpl valein tallennettu määrä konsoliin
    if i%500==0:
     print str(i) + 'kpl tallennettu.'
    i += 1
